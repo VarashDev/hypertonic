@@ -1,5 +1,5 @@
 ---
-
+import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
 ---
 
 <html lang="en">
@@ -11,6 +11,17 @@
 		<title>Astro</title>
 	</head>
 	<body>
+		<nav>
+  <SignedOut>
+	<SignInButton mode="modal" /><br>
+	signed out
+</SignedOut>
+  <SignedIn>
+	<UserButton />
+<br>
+signed in
+</SignedIn>
+</nav>
 		<h1>Astro</h1>
 	</body>
 </html>
