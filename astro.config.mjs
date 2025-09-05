@@ -1,10 +1,13 @@
 import { defineConfig } from 'astro/config'
 import netlify from '@astrojs/netlify'
 import clerk from '@clerk/astro'
+import { ukUA } from '@clerk/localizations'
 
 export default defineConfig({
   output: 'server',
-  integrations: [clerk()],
+  integrations: [clerk({
+    localization: ukUA,
+  })],
   adapter: netlify({
     // Important for Clerk on Netlify: leave edgeMiddleware OFF
     // edgeMiddleware: false // (default)
