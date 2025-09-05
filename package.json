@@ -12,6 +12,8 @@
     "@astrojs/netlify": "^6.5.9",
     "@clerk/astro": "^2.11.8",
     "@clerk/localizations": "^3.24.2",
-    "astro": "^5.13.5"
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.5",
+    "tailwindcss": "^4.1.13"
   }
 }

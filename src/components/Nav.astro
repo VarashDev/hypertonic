@@ -1,0 +1,30 @@
+---
+import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
+---
+
+<nav>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center text-xl font-bold">
+        <span class="text-xl font-medium text-white uppercase">
+          <a href="/">Гіпертонік</a>
+        </span>
+      </div>
+
+      <div class="flex items-center">
+          <SignedOut>
+            <!-- <SignInButton mode="modal" /><br> -->
+            <SignInButton mode="modal" asChild>
+                <button class="bg-amber-300 text-teal-900 px-4 py-1 font-semibold rounded">Увійти</button>
+            </SignInButton>
+        </SignedOut>
+        <SignedIn>
+            <UserButton />
+        </SignedIn>
+      </div>
+
+
+    </div>
+  </div>
+</nav>

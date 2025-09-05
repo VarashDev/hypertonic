@@ -1,27 +1,19 @@
 ---
-import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/astro/components'
+import Layout from "../layouts/Layout.astro";
+import OGImage from "../assets/hypertonic.webp";
+import { Image } from "astro:assets";
 ---
 
-<html lang="uk-UA">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Гіпертонік</title>
-	</head>
-	<body>
-		<nav>
-  <SignedOut>
-	<!-- <SignInButton mode="modal" /><br> -->
-	<SignInButton mode="modal" asChild>
-		<button>Увійти</button>
-	</SignInButton>
-</SignedOut>
-  <SignedIn>
-	<UserButton />
-</SignedIn>
-</nav>
+<Layout 
+title='Українська Програма "Гіпертонік"'
+description='Програма "Гіпертонік" допомогає людям з гіпертонічною хворобою (артеріальною гіпертензією) контролювати свій артеріальний тиск.'
+url="https://hypertonic.netlify.app/"
+type="website"
+site_name="Гіпертонік"
+ogimage={OGImage.src}
+>
+
+
+
 		<h1>Гіпертонік</h1>
-	</body>
-</html>
+</Layout>

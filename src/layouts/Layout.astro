@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+const {title, description, url, type, site_name, ogimage} = Astro.props;
+---
+<html lang="uk-UA">
+	<head>
+		<meta charset="utf-8" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={url} />
+		<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description}>
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content={type} />
+		<meta property="og:site_name" content={site_name} />
+		<meta property="og:image" content={ogimage} />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:image" content={ogimage} />
+		<meta property="twitter:title" content={title} />
+	</head>
+	<body class="min-h-screen bg-amber-100">
+		<header class="bg-teal-900 text-white sticky top-0 z-50 shadow-md">
+			<Nav />
+		</header>
+		<main class="px-24 py-4 max-w-7xl mx-auto w-full max-sm:px-5">
+
+            <slot />
+
+            </main>
+		<footer>
+			<div class="bg-teal-700 p-4">
+				<div class="grid gap-2 grid-cols-2 md:grid-cols-4 px-24 max-w-7xl mx-auto w-full max-sm:px-5 text-white text-lg font-semibold">
+					<div><a href="https://portland.oregonfishingforum.com">Portland</a></div>
+					<div><a href="https://eugene.oregonfishingforum.com">Eugene</a></div>
+					<div><a href="https://salem.oregonfishingforum.com">Salem</a></div>
+					<div><a href="https://gresham.oregonfishingforum.com">Gresham</a></div>
+					<div><a href="https://hillsboro.oregonfishingforum.com">Hillsboro</a></div>
+					<div><a href="https://bend.oregonfishingforum.com">Bend</a></div>
+					<div><a href="https://beaverton.oregonfishingforum.com">Beaverton</a></div>
+					<div><a href="https://medford.oregonfishingforum.com">Medford</a></div>
+				</div>
+			</div>
+			<div class="bg-teal-900 text-white text-center p-4">© 2025 <a href="/">Гіпертонік</a></div>
+		</footer>
+
+  <script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+    // Mobile dropdown toggle services
+  document.getElementById('mobile-dropdown-btn-spicies').addEventListener('click', () => {
+    document.getElementById('mobile-dropdown-spicies').classList.toggle('hidden');
+  });
+
+  // Mobile dropdown toggle services
+  document.getElementById('mobile-dropdown-btn-services').addEventListener('click', () => {
+    document.getElementById('mobile-dropdown-services').classList.toggle('hidden');
+  });
+</script>
+
+	</body>
+</html>
+
+<style is:global>
+	p {margin-bottom:16px;}
+	h2 {font-size: 1.875rem; line-height: 2.25rem; color: oklch(0.386 0.063 188.416); font-weight: 800; margin-top: 16px; margin-bottom: 16px;}
+	h3 {font-size: 1.5rem; line-height: 2rem; color: oklch(0.386 0.063 188.416); font-weight: 700; margin-top: 16px; margin-bottom: 16px;}
+	h4 {font-size: 1.3rem; line-height: 1.8rem; color: oklch(0.386 0.063 188.416); font-weight: 600; margin-top: 12px; margin-bottom: 12px;}
+</style>
